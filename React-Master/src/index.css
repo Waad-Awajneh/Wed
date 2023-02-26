@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+ body {
+   margin: 0;
+   font-family: sans-serif ,Satisfy, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+     sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+ }
+/*
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+ @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+   img[loading='lazy'] {
+     clip-path: inset(0.6px);
+   }
+ }
+
+ @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+   img[loading='lazy'] {
+     clip-path: inset(0.6px);
+   }
+ }
+
+ .infinite-scroll-component__outerdiv {
+   width: 99% !important;
+   position: relative !important;
+ }
+
+ .infinite-scroll-component {
+   overflow: hidden !important;
+   /* height: 21rem !important; */
+ }
+ .test{
+  display: block;
+ }
+
+ @layer utilities {
+   .scrollbar::-webkit-scrollbar {
+     width: 10px;
+     height: 10px;
+     -ms-overflow-style: none;
+     /* IE and Edge */
+     scrollbar-width: none;
+     /* Firefox */
+     display: none;
+
+   }
+
+   .scrollbar::-webkit-scrollbar-track {
+     border-radius: 100vh;
+     background: #fff;
+   }
+
+   .scrollbar::-webkit-scrollbar-thumb {
+     background: #D9AD90;
+     border-radius: 100vh;
+     border: 3px solid #f6f7ed;
+   }
+
+   .scrollbar::-webkit-scrollbar-thumb:hover {
+     background: #CA895E;
+   }
+
+ }
