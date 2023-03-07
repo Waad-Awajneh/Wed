@@ -21,16 +21,16 @@ import Search from "../views/Search";
 import UserProfile from "../views/UserProfile";
 
 export const AllRoutes = (params) => {
-    const isAuthenticated = useIsAuthenticated();
+  const isAuthenticated = useIsAuthenticated();
 
   return (
     <BrowserRouter>
-    <FormConnectModal />
-    <FormAskPriceModal/>
-          { console.log(isAuthenticated)}
+      <FormConnectModal />
+      <FormAskPriceModal />
+      {console.log(isAuthenticated)}
       <Routes>
         {/* <Route exact path="/" element={<DropdownSearchList  options={["test","esfft","waad","hyggtyf","byfctdxrx"]}/>}></Route> */}
-         
+
         <Route exact path="/" element={<App />}>
           <Route exact index element={<Home openTap={1} />} />
           <Route exact path="Home" element={<Home openTap={1} />} />
@@ -45,12 +45,6 @@ export const AllRoutes = (params) => {
         <Route exact path="/AddPost" element={<AddPost />} />
         <Route exact path="/Favorite" element={<Favorite />} />
         <Route exact path="/search" element={<Search />} />
-
-        {/*   <Route
-          path="/SinglePost/:id"
-          exact
-          element={cookies.currentUser != null ? <SinglePage /> : <Login />}
-    />*/}
         <Route exact path="/SinglePost/:id" element={<SinglePost />} />
         <Route exact path="/SignUp" element={<SignUp />} />
         <Route exact path="*" element={<NotFound />} />
