@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const SectionOne = () => {
   return (
     <div
@@ -28,25 +26,6 @@ const SectionOne = () => {
               </p>
             </span>
           </div>
-
-          {/* <Link
-            to="/landing#sectionTwo"
-            aria-label="Scroll down"
-            className="flex flex-warp items-center justify-center w-14 h-14 flex-col mx-auto text-lnav duration-300 transform border border-lnav rounded-full hover:text-deep-purple-accent-400 hover:border-deep-purple-accent-400 hover:shadow hover:scale-110"
-          >
-            <div className=" text-xs h-4 items-center text-center font-bold text-lnav">
-              Explore
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="currentColor"
-            >
-              <path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" />
-            </svg>
-          </Link> */}
         </div>
       </div>
     </div>

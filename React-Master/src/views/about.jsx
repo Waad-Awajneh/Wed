@@ -6,15 +6,15 @@ const About = () => {
   return (
     <>
       {<Navbar />}
-      <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
-        <div className="lg:w-10/12 w-full">
-          <p className="font-normal text-sm leading-3 text-lnav hover:text-pcol cursor-pointer">
+      <div className="px-4 2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9">
+        <div className="w-full lg:w-10/12">
+          <p className="text-sm font-normal leading-3 cursor-pointer text-lnav hover:text-pcol">
             About
           </p>
-          <h2 className="xl:w-8/12 lg:w-10/12 w-full font-bold text-pcol lg:text-4xl text-3xl lg:leading-10 leading-9 mt-2">
+          <h2 className="w-full mt-2 text-3xl font-bold leading-9 xl:w-8/12 lg:w-10/12 text-pcol lg:text-4xl lg:leading-10">
             Who We Are
           </h2>
-          <p className="font-normal text-base leading-6 text-gray-600 mt-6">
+          <p className="mt-6 text-base font-normal leading-6 text-gray-600">
             Wed is the largest and most trusted global marketplace connecting
             engaged couples with local wedding professionals. Millions of
             couples around the world are able to search, compare and book from a
@@ -23,57 +23,57 @@ const About = () => {
           </p>
         </div>
 
-        <div className="lg:mt-14 sm:mt-10 mt-12">
+        <div className="mt-12 lg:mt-14 sm:mt-10">
           <img
-            className="lg:block hidden w-full"
+            className="hidden w-full lg:block"
             src="https://i.ibb.co/GvwJnvn/Group-736.png"
             alt="Group of people Chilling"
           />
           <img
-            className="lg:hidden sm:block hidden w-full"
+            className="hidden w-full lg:hidden sm:block"
             src="https://i.ibb.co/5sZTmHq/Rectangle-116.png"
             alt="Group of people Chilling"
           />
           <img
-            className="sm:hidden block w-full"
+            className="block w-full sm:hidden"
             src="https://i.ibb.co/zSxXJGQ/Rectangle-122.png"
             alt="Group of people Chilling"
           />
         </div>
 
-        <div className="lg:mt-16 sm:mt-12 mt-16 flex lg:flex-row justify-between flex-col lg:gap-8 gap-12">
+        <div className="flex flex-col justify-between gap-12 mt-16 lg:mt-16 sm:mt-12 lg:flex-row lg:gap-8">
           <div className="w-full xl:w-5/12 lg:w-6/12">
-            <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-pcol"></h2>
-            <p className="font-normal text-base leading-6 text-gray-600 mt-4">
+            <h2 className="text-3xl font-bold leading-7 lg:text-4xl lg:leading-9 text-pcol"></h2>
+            <p className="mt-4 text-base font-normal leading-6 text-gray-600">
               <span className="text-lnav font-[Satisfy] font-bold">
                 VENDORS
-              </span>{" "}
+              </span>
               Get exposure to millions of couples through a premium WeddingWire
               listing. Our features and benefits will drive leads and bookings
               to businesses, highlight consumer reviews and more.
             </p>
-            <p className="font-normal text-base leading-6 text-gray-600 mt-6">
+            <p className="mt-6 text-base font-normal leading-6 text-gray-600">
               <span className="text-lnav font-[Satisfy] font-bold">
-                ENGAGED COUPLES{" "}
+                ENGAGED COUPLES
               </span>
               Our comprehensive directory of wedding professionals, from venues
               to photographers, features millions of consumer reviews, detailed
               pricing and availability information, payments and more.
             </p>
           </div>
-          <div className="lg:flex items-center w-full lg:w-1/2 ">
+          <div className="items-center w-full lg:flex lg:w-1/2 ">
             <img
-              className="lg:block hidden w-full"
+              className="hidden w-full lg:block"
               src="https://i.ibb.co/2kxWpNm/Group-740.png"
               alt="people discussing on board"
             />
             <img
-              className="lg:hidden sm:block hidden w-full h-3/4"
+              className="hidden w-full lg:hidden sm:block h-3/4"
               src="https://i.ibb.co/ZLgK3NQ/Group-788.png"
               alt="people discussing on board"
             />
             <img
-              className="sm:hidden block w-full"
+              className="block w-full sm:hidden"
               src="https://i.ibb.co/9g2R7Xr/Group-803.png"
               alt="people discussing on board"
             />

@@ -56,18 +56,32 @@ function Favorite(props) {
     <>
       <Header />
       <h1 className="mt-16  flex  font-medium text-center font-[Satisfy] text-black px-5 w-fit text-4xl">
-        <BsHeartFill className="mx-2 text-red-600  " />
+        <BsHeartFill className="mx-2 text-red-600 " />
         {auth().user.full_name.charAt(0).toUpperCase() +
-          auth().user.full_name.slice(1) +" "}
-         Favorite
+          auth().user.full_name.slice(1) +
+          " "}
+        Favorite
       </h1>
-      <h3 className="mb-16 ml-16">Keep all of your wedding favorites here! Click the  to save your favorite vendors, engagement rings, and dresses, Real Weddings.</h3>
-      <div className="m-5 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
-        { favoritePosts.length != 0? favoritePosts?.map((cardinfo) => (
-          <Card key={cardinfo.id} cards={cardinfo} />
-        )):
-        <h3 className="mb-16 ml-16">No favorite yet !! <Link className="text-lg font-bold text-lnav font-[Satisfy]" to={"/"}><span>Add Now</span></Link> </h3>
-      }
+      <h3 className="mb-16 ml-16">
+        Keep all of your wedding favorites here! Click the to save your favorite
+        vendors, engagement rings, and dresses, Real Weddings.
+      </h3>
+      <div className="grid grid-flow-row gap-8 m-5 text-neutral-600 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+        {favoritePosts.length != 0 ? (
+          favoritePosts?.map((cardinfo) => (
+            <Card key={cardinfo.id} cards={cardinfo} />
+          ))
+        ) : (
+          <h3 className="mb-16 ml-16">
+            No favorite yet !!{" "}
+            <Link
+              className="text-lg font-bold text-lnav font-[Satisfy]"
+              to={"/"}
+            >
+              <span>Add Now</span>
+            </Link>{" "}
+          </h3>
+        )}
       </div>
       <FooterComponent />
     </>

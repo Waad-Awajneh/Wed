@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
 export const getFavorite = createAsyncThunk(
   "posts/getFavorite",
   async (config) => {
@@ -34,6 +33,7 @@ const initialState = {
   favoritePostsId: [],
   followersId: [],
   userProfileData: [],
+  UserName: "",
   status: "",
 };
 
@@ -48,7 +48,6 @@ export const UserReducer = createSlice({
     },
     getFollowersId: (state, action) => {
       state.followersId = state.followersData.map((ele) => {
-
         return ele.user_id;
       });
     },

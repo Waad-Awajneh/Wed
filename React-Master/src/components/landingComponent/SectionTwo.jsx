@@ -1,5 +1,3 @@
-import { Button } from "flowbite-react";
-import { BsPerson } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const SectionTwo = () => {
@@ -27,7 +25,6 @@ const SectionTwo = () => {
               </Link>
             </div>
             <div className="w-11/12 xl:w-4/12 mx-5 mt-8 xl:mt-0 flex justify-end md:w-5/12  bg-lb relative py-20">
-              {/* <div className="h-4/5 w-4/5 mx-3"> */}
               <img
                 tabIndex="0"
                 role="img"
@@ -36,7 +33,6 @@ const SectionTwo = () => {
                 src={require("./../../assests/img/12.jpg")}
                 alt="people smiling"
               />
-              {/* </div> */}
             </div>
           </div>
         </div>

@@ -108,12 +108,12 @@ export default function Header() {
           "top-0  z-50  rounded-sm  bg-white shadow-lg flex flex-wrap items-center justify-between px-2 text-lnav"
         }
       >
-        <div className="h-full w-full   flex items-center justify-between relative ">
+        <div className="relative flex items-center justify-between w-full h-full ">
           <div>
             <Link to={"/"}>
               <img
                 src={require("./../assests/img/logo.png")}
-                className="h-16 w-16 ml-3 mt-2"
+                className="w-16 h-16 mt-2 ml-3"
                 alt=" Logo"
               />
             </Link>
@@ -128,10 +128,10 @@ export default function Header() {
             style={{ transition: "all 1s " }}
           >
             <div className=" rounded-[30px] bg-gray-100  text-sm w-full   h-12  ">
-              <div className="flex items-center px-3 basis-full h-full w-full">
+              <div className="flex items-center w-full h-full px-3 basis-full">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
+                  className="w-4 h-4"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -146,7 +146,7 @@ export default function Header() {
                 <input
                   list="searchList"
                   type="text"
-                  className="block  bg-transparent border-none w-full outline-0 p-2"
+                  className="block w-full p-2 bg-transparent border-none outline-0"
                   placeholder="Search"
                   value={searchTerm}
                   onChange={handleSearch}
@@ -162,7 +162,7 @@ export default function Header() {
                         filteredOptionsUsers?.slice(0, 3).map((option) => (
                           <div
                             key={option.user_id}
-                            className="bg-white cursor-pointer text-gray-800 active:bg-lnav flex items-center py-1 px-2  hover:bg-blue-gray-400 "
+                            className="flex items-center px-2 py-1 text-gray-800 bg-white cursor-pointer active:bg-lnav hover:bg-blue-gray-400 "
                             onClick={(e) => {
                               handleOptionSelect(option.full_name);
                               e.target.parentNode.parentNode.style.display =
@@ -170,7 +170,7 @@ export default function Header() {
                             }}
                           >
                             <img
-                              className="p-1 mr-3 w-8 h-8 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+                              className="w-8 h-8 p-1 mr-3 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
                               src={
                                 option.profile_Img != null
                                   ? `data:image/jpeg;base64,${option.profile_Img}`
@@ -184,7 +184,7 @@ export default function Header() {
                           </div>
                         ))
                       ) : (
-                        <p className="bg-white cursor-pointer text-gray-800 active:bg-lnav p-2">
+                        <p className="p-2 text-gray-800 bg-white cursor-pointer active:bg-lnav">
                           No People founded
                         </p>
                       )}
@@ -195,7 +195,7 @@ export default function Header() {
                         filteredOptionsPosts?.slice(0, 3).map((option) => (
                           <div
                             key={option.post_id}
-                            className="bg-white cursor-pointer text-gray-800 active:bg-lnav flex items-center py-2 px-2 hover:bg-blue-gray-400"
+                            className="flex items-center px-2 py-2 text-gray-800 bg-white cursor-pointer active:bg-lnav hover:bg-blue-gray-400"
                             onClick={() => {
                               handleOptionSelect(option.title);
                             }}
@@ -207,7 +207,7 @@ export default function Header() {
                       ) : (
                         <div
                           value=""
-                          className="bg-white cursor-pointer text-gray-800 active:bg-lnav p-2"
+                          className="p-2 text-gray-800 bg-white cursor-pointer active:bg-lnav"
                         >
                           No posts founded
                         </div>
@@ -221,7 +221,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="flex text-lnav items-center  gap-3 ml-3   rounded-2xl">
+          <div className="flex items-center gap-3 ml-3 text-lnav rounded-2xl">
             <button
               className="md:hidden "
               onClick={(e) => {
@@ -231,7 +231,7 @@ export default function Header() {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -247,7 +247,7 @@ export default function Header() {
             <Link to={"/"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 mx-2 cursor-pointer"
+                className="w-6 h-6 mx-2 cursor-pointer"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -262,7 +262,7 @@ export default function Header() {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 mx-2 cursor-pointer"
+                className="w-6 h-6 mx-2 cursor-pointer"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -279,7 +279,7 @@ export default function Header() {
             <Link to={"/Favorite"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 mx-2 cursor-pointer"
+                className="w-6 h-6 mx-2 cursor-pointer"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -294,7 +294,7 @@ export default function Header() {
             </Link>
 
             <div className="flex flex-wrap gap-2">
-              <Link to={"/profile"}>
+              <Link to={`/profile`}>
                 <Avatar
                   img={
                     profileData.profile_Img != null &&
@@ -313,14 +313,14 @@ export default function Header() {
             </div>
 
             <div
-              className="flex flex-wrap  "
+              className="flex flex-wrap "
               onClick={() => {
                 signOut();
                 navigate("/landing");
               }}
             >
               <Logout />
-              {/* <MdOutlineLogout className="h-6 w-6 mx-2 cursor-pointer" /> */}
+              {/* <MdOutlineLogout className="w-6 h-6 mx-2 cursor-pointer" /> */}
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../components/Home";
 import FormAskPriceModal from "../components/Modal/FormAskPriceModal";
 import FormConnectModal from "../components/Modal/FormConnectModal";
+
 // dynamic imports
 const App = lazy(() => import("../App"));
 const Profile = lazy(() => import("../views/Profile"));
@@ -17,7 +18,7 @@ const Favorite = lazy(() => import("../views/Favorite"));
 const Search = lazy(() => import("../views/Search"));
 const SinglePost = lazy(() => import("../components/singlePost"));
 const SignUp = lazy(() => import("../components/signUp"));
-const NotFound = lazy(() => import("../views/notFoundPage"));
+const NotFoundPage = lazy(() => import("../views/notFoundPage"));
 
 export const AllRoutes = (params) => {
   return (
@@ -43,7 +44,7 @@ export const AllRoutes = (params) => {
           <Route path="/search" element={<Search />} />
           <Route path="/SinglePost/:id" element={<SinglePost />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

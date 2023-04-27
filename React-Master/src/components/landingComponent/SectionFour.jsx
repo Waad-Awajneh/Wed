@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./../button";
+
 import { Link } from "react-router-dom";
 function SectionFour() {
   return (
@@ -22,7 +22,6 @@ function SectionFour() {
           </div>
 
           <div className="w-11/12 xl:w-4/12 mx-5 mt-8 xl:mt-0 flex justify-end md:w-5/12  bg-lb relative py-20">
-            {/* <div className="h-4/5 w-4/5 mx-3"> */}
             <img
               tabIndex="0"
               role="img"
@@ -31,7 +30,6 @@ function SectionFour() {
               src={require("./../../assests/img/5.jpg")}
               alt="people smiling"
             />
-            {/* </div> */}
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
 const allComments = "http://localhost:8000/api/comments";
 
 export const getAllComments = createAsyncThunk(
@@ -15,6 +14,7 @@ export const getAllComments = createAsyncThunk(
     );
   }
 );
+
 export const getCommentsByPostID = createAsyncThunk(
   "comment/getCommentsByPostID",
   async (id) => {

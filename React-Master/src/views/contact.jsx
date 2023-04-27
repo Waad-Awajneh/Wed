@@ -4,7 +4,7 @@ import FooterComponent from "../components/Footer";
 function Contact() {
   return (
     <>
-      {<Navbar />}
+      <Navbar />
       <div className="container  px-6 mx-auto">
         <section className="mb-32 text-gray-800">
           <div

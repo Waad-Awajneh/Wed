@@ -1,18 +1,11 @@
-import React from "react";
-
 import FooterComponent from "../components/Footer";
-
-import Button from "../components/button";
 import { useEffect } from "react";
 import { getProfileData, setIsEdit, setUpdate } from "../Reducers/PostReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useAuthUser } from "react-auth-kit";
 import HomeGallery from "../components/HomeGallery";
 import Header from "../components/Header";
-
 import { RiImageEditFill, RiRoadMapLine } from "react-icons/ri";
-import axios from "axios";
-import Swal from "sweetalert2";
 import { useState } from "react";
 import {
   handelOpenFormModel,
@@ -22,7 +15,6 @@ import {
 import { AiOutlineComment } from "react-icons/ai";
 import { HiUserGroup } from "react-icons/hi";
 import { SiStackexchange } from "react-icons/si";
-import { SlBriefcase } from "react-icons/sl";
 import { handleEdit } from "../actions/editImage";
 
 export default function Profile() {
@@ -83,53 +75,6 @@ export default function Profile() {
     }
   }, [coverPic]);
 
-  // const handleEdit = () => {
-  //   if (profilePic.profile_Img == "") return null;
-
-  //   var FormData = require("form-data");
-  //   var data = new FormData();
-  //   data.append("profile_Img", profilePic.profile_Img);
-
-  //   var config = {
-  //     method: "post",
-  //     url: "http://localhost:8000/api/editProfilePic",
-  //     headers: {
-  //       "Content-Type": "multipart/form-data",
-  //       Accept: "application/vnd.api+json",
-  //       Authorization: `Bearer ${auth().token}`,
-  //     },
-  //     data: data,
-  //   };
-
-  //   axios(config)
-  //     .then(function (response) {
-
-  //       const Toast = Swal.mixin({
-  //         toast: true,
-  //         position: "top-right",
-  //         iconColor: "green",
-  //         customClass: {
-  //           popup: "colored-toast",
-  //         },
-  //         showConfirmButton: false,
-  //         timer: 1500,
-  //         timerProgressBar: true,
-  //       });
-  //       Toast.fire({
-  //         icon: "success",
-  //         title: response.data.message,
-  //       });
-
-  //       dispatch(setUpdate());
-
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // };
-
-  /********************************************************** */
-
   if (profileData.length == 0) return "LOADING";
   return (
     <>
@@ -137,25 +82,11 @@ export default function Profile() {
 
       <main className="profile-page h-fit">
         <section className="relative block h-[500px] sm:h-[370px] cover:h-[400px]">
-          {/* <img
-            src={require("./../assests/img/1.jpg")} //cover_Img
-            className="absolute top-0 w-full h-full bg-center bg-cover cover:h-auto"
-            alt=" Logo"
-          /> */}
-          {/************************************************************************************** */}
           {profileData.cover_Img != null ? (
             <img
               alt="..."
-              // src={require("../assests/img/pro.jpg")} //profile_Img
-              src={
-                // profileData.cover_Img != null
-                // ?
-                `data:image/jpeg;base64,${profileData.cover_Img}`
-                // : require("../assests/img/defaultCover.jpg")
-              }
-              // className="peer shadow-xl rounded-full h-auto align-middle border-none group-hover:block absolute -m-16 -ml-20 lg:-ml-16  top-[80px]  "
+              src={`data:image/jpeg;base64,${profileData.cover_Img}`}
               className="absolute top-0 w-full h-full bg-center bg-cover peer cover:h-auto"
-              // style={{ maxWidth: "160px", width:"160px" ,height:"160px"}}
             />
           ) : (
             <div className="absolute top-0 w-full h-full bg-center bg-cover peer cover:h-auto bg-[#dad1c54d]"></div>
@@ -185,26 +116,6 @@ export default function Profile() {
               }));
             }}
           />
-          {/************************************************************************************** */}
-          {/* <div
-            className="absolute bottom-0 left-0 right-0 top-auto w-full overflow-hidden pointer-events-none"
-
-          >
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="text-gray-300 fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg> 
-          </div>*/}
         </section>
         <section className="relative pb-16">
           <div className=" w-[93%]   ml-14  pl-4  pm900:w-full pm900L:pl-0 pmi900:pm1400:ml-5 pm900:ml-5 flex pm600:flex-wrap  ">
@@ -212,12 +123,8 @@ export default function Profile() {
               <div className="px-6 pm900:p-0 ">
                 <div className="flex flex-wrap w-full">
                   <div className="relative flex items-center justify-center w-full px-4 lg:order-2 ">
-                    {/*************************************************************** */}
-                    {/* <ImageComponen image={profileData.profile_Img} gender={profileData.gender} setProfilePic={setProfilePic}/> */}
-
                     <img
                       alt="..."
-                      // src={require("../assests/img/pro.jpg")} //profile_Img
                       src={
                         profileData.profile_Img != null &&
                         (!auth().google ||
@@ -267,14 +174,13 @@ export default function Profile() {
                         }));
                       }}
                     />
-                    {/*************************************************************** */}
+
                     <div className="text-center  mt-[14rem] w-full">
                       <h3 className="mb-2 text-4xl font-semibold leading-normal text-gray-800">
                         {profileData.full_name.charAt(0).toUpperCase() +
                           profileData.full_name.slice(1)}
                       </h3>
                       <div className="mt-0 mb-2 text-sm font-bold leading-normal text-gray-500 uppercase">
-                        {/* <SlBriefcase size={"25px"}  color={"#D9AD90"}/> */}
                         {profileData.major}
                       </div>
                       <div className="mt-10 mb-2 text-gray-700">
@@ -291,7 +197,6 @@ export default function Profile() {
                 <div>
                   <div className="w-full px-4 ">
                     <div className="py-6  pmi1400:mt-14  sm:mt-0 flex flex-col items-center font-[Satisfy] ">
-                      {/* <Button isClick={true} page={"profile"} name={"Connect"} /> */}
                       <button
                         type="button"
                         className=" text-white bg-lnav w-[11rem] h-[3.5rem]  font-[600] hover:bg-lb focus:outline-none focus:ring-4 focus:ring-pcol rounded-full text-xl px-2 py-2.5 text-center mr-2 m-4 dark:bg-pcol dark:hover:bg-blue-700 dark:focus:ring-pcol"
@@ -304,27 +209,20 @@ export default function Profile() {
                         className="text-white bg-lnav  w-[11rem] h-[3.5rem]  font-[600] hover:bg-lb focus:outline-none focus:ring-4 focus:ring-pcol  rounded-full text-xl px-2 py-2.5 text-center mr-2 m-4 dark:bg-pcol dark:hover:bg-blue-700 dark:focus:ring-pcol"
                         onClick={() => dispatch(handelOpenPriceModel())}
                       >
-                        Edit information{" "}
+                        Edit information
                       </button>
-                      {/* <Button page={"profile"} name={"ASK Price"} /> */}
                     </div>
-                  </div>{" "}
-                  {/* 
-element.style {
-    font-size: 12px;
-    font-weight: 900;
-    line-height: 4px; */}
+                  </div>
+
                   <div className="w-full p-4 lg:order-1 ">
                     <div className="flex items-center gap-8  justify-between align-middle  font-[Satisfy]  ">
                       <div className="flex justify-center w-full text-center ">
-                        {/* <span className="text-base w-[90px] text-[12px] font-[900]   text-left uppercase text-black "></span> */}
                         <span className="text-base text-center text-[12px] font-[900]  block uppercase w-[50px] tracking-wide text-black">
-                          <SiStackexchange size={"25px"} color={"#D9AD90"} />{" "}
+                          <SiStackexchange size={"25px"} color={"#D9AD90"} />
                           {profileData.posts?.length}
                         </span>
                       </div>
                       <div className="flex justify-center w-full text-center ">
-                        {/* <span className="text-base text-[12px] font-[900]   w-[90px] text-left uppercase  text-black"></span> */}
                         <span className="text-base text-[12px] font-[900]   block uppercase tracking-wide w-[50px] text-black">
                           <HiUserGroup size={"25px"} color={"#D9AD90"} />{" "}
                           {profileData.follower_info.length}
@@ -333,7 +231,6 @@ element.style {
                       </div>
 
                       <div className="flex justify-center w-full text-center ">
-                        {/* <span className="text-base w-[90px] text-[12px] font-[900]   text-left uppercase  text-black "></span> */}
                         <span className="text-base   block text-[12px] font-[900] uppercase tracking-wide w-[50px] text-black">
                           <AiOutlineComment size={"25px"} color={"#D9AD90"} />{" "}
                           {profileData.comments == null
